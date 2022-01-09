@@ -26,45 +26,17 @@ html {
             padding:0 2rem;
             margin:auto;
         }
-        /*
-        .os-scrollbar-track {
-            width:20px;
-        }
-        .os-host-transition>.os-scrollbar>.os-scrollbar-track {
-            background:$red;
-        }
-       
-        .deviant-scrollbars > .os-scrollbar-horizontal {
-            top: 0;
-            right: 0;
-            bottom: auto;
-            left: 10px;
-            width: 50%;
-            background: rgba(0, 0, 255, 0.3);
-        }
-        .deviant-scrollbars > .os-scrollbar-vertical {
-            left: 0;
-            bottom: 0;
-            right: auto;
-            top: 10px;
-            height: 50%;
-            background: rgba(255, 0, 0, 0.3);
-        }
-        .deviant-scrollbars.os-host-scrollbar-horizontal-hidden > .os-scrollbar-vertical {
-            top: 0;
-        }
-        .deviant-scrollbars.os-host-scrollbar-vertical-hidden > .os-scrollbar-horizontal {
-            left: 0;
-        }
-         */
-        .os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
-            background-color:$red!important;
-            border-radius:7px;
-        }
-        .os-scrollbar-vertical, .os-scrollbar-horizontal {
-            bottom:14px!important;
-            width:14px!important;
-            right:2px!important
-        }
+    }
+    .os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
+        background-color:$red!important;
+        border-radius:7px;
+    }
+    .os-theme-dark>.os-scrollbar, .os-theme-light>.os-scrollbar {
+        padding:0!important;
+    }
+    .os-scrollbar-vertical, .os-scrollbar-horizontal {
+        bottom:14px!important;
+        width:10px!important;
+        right:4px!important
     }
 }
