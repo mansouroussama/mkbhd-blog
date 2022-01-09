@@ -1,0 +1,220 @@
+@use '../abstracts' as *;
+
+main {
+    padding-top:$s2;
+
+    article {
+        .article-info {
+            font-family:$secondary-font;
+            font-weight:300;
+
+            .article-tags {
+                display:flex;
+                margin-bottom:$s7;
+                gap:$s6;
+
+                li {
+                    padding:$s9 $s7;
+                    color:$black-1;
+                    background-color:$grey-4;
+                    text-transform:uppercase;
+                    font-weight:300;
+                    border-radius:.3rem;
+                }
+            }
+            .article-heading {
+                margin:0 0 $s5 0;
+                font-family:$primary-font;
+                font-size:4.8rem;
+                font-weight:900;
+                line-height:1.1;
+                max-width:90rem;
+            }
+            .article-description {
+                font-style:italic;
+                color:$grey-1;
+                margin-bottom:$s5;
+                font-size:1.8rem;
+            }
+            .article-data {
+                display:flex;
+                align-items:center;
+                margin-bottom:$s3;
+
+                .article-author-date {
+                    display:flex;
+                    gap:$s5;
+    
+                    .article-author-img {
+                        height:5rem;
+                    }
+                    .article-author {
+                        display:flex;
+                        flex-direction:column;
+                        justify-content:center;
+                        font-family:$secondary-font;
+                        font-weight:300;
+                        text-transform:uppercase;
+                        
+                        .article-author-name {
+                            margin-bottom:$s10;
+                            font-size:1.6rem;
+                            font-weight:300;
+
+                            span {
+                                color:$red;
+                                font-weight:350;
+                            }
+                        }
+                        .article-publishing-date {
+                            color:$grey-2;
+                        }
+                    }
+                }
+                .article-share {
+                    margin-left:auto;
+                    display:flex;
+                    align-items:center;
+                    gap:$s7;
+
+                    span {
+                        color:$red;
+                        font-weight:350;
+                        text-transform:uppercase;
+                    }
+
+                    .article-share-links {
+                        display:flex;
+                        gap:$s7;
+
+                        .article-link {
+                            width:5rem;
+                            line-height:5rem;
+                            background-color:$grey-4;
+                            border-radius:50%;
+                            text-align:center;
+                            font-size:2rem;
+
+                            &.facebook { color:$facebook }
+                            &.twitter { color:$twitter }
+
+                            a { display:block }
+                        }
+                    }
+                }
+            }
+        }
+        figure.article-img {
+            margin:0 0 $s2 0;
+
+            img {
+                width:100%;
+            }
+
+            figcaption {
+                text-transform:uppercase;
+                color:$grey-1;
+                padding:$s7 0;
+            }
+            hr {
+                height:.2rem;
+                border:none;
+                background-color:$grey-4;
+            }
+        }
+        .article-container {
+            margin-bottom:$s2;
+            display:flex;
+            flex-wrap:wrap;
+            gap:$s1;
+            align-items:flex-start;
+
+            .article-content {
+                width:60%;
+                flex-grow:99999;
+
+                p {
+                    font-size:1.9rem;
+                    line-height:2;
+                    margin:0;
+    
+                    &:not(:last-child) {
+                        margin:0 0 $s6 0;
+                    }
+                }
+
+            }
+            .deals-card {
+                width:32rem;
+                flex-grow:1;
+            }
+        }
+
+    }
+    section {
+        &.comments { 
+            margin-bottom:$s2;
+        }
+
+        &.more-articles {
+            margin-bottom:$s1;
+
+            .more-articles-container {
+                color:$white;
+                display:flex;
+                gap:$s2;
+                margin-bottom:$s2;
+                flex-wrap:wrap;
+                
+                .multiple-article {
+                    width:calc(calc(90rem - 100%)*999);
+                    flex-grow:1;
+                    flex-shrink:1;
+                    border-radius:.8rem;
+                    overflow:hidden;
+
+                    .review-info {
+                        padding:$s5;
+
+                        .review-title {
+                            font-size:1.8rem;
+                        }
+                        .review-writer-date {
+                            color:$grey-2;
+                            margin-bottom:$s7;
+                            font-size:1.3rem;
+                            font-weight:300; 
+                        }
+                    }
+                    .review-img {
+                        height:20rem;
+                        
+                        .img1 { background-image:url(../img/latest-reviews/main-review.png) }
+                        .img2 { background-image:url(../img/latest-reviews/review1.png) }
+                        .img3 { background-image:url(../img/latest-reviews/review2.png) }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:940px) {
+    main section.more-articles .more-articles-container .multiple-article {
+        flex-direction:row-reverse;
+        width:100%;
+
+        .review-info {
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            max-width:25rem;
+
+            .review-title {
+                font-size:2.4rem;
+            }
+        }
+        .review-img {
+            height:25rem;
+        }
+    }
+}

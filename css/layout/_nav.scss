@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+html {
+    body {
+        nav {
+            @include flexWrapper;
+            min-height:6rem;
+            font-family:$secondary-font;
+            font-weight:300;
+            background-color:$black-2;
+            color:$white;
+            z-index:99;
+            user-select:none;
+            //position:sticky;
+            //top:80px;
+        
+            
+            .wrapper {
+                padding:0 $s5;
+                gap:$s3;
+
+                @media only screen and (max-width:1140px) {
+                    padding:$s5;
+                    align-items:stretch;
+                    gap:$s5;
+                }
+        
+                .label {
+                    text-transform:uppercase;
+                    font-size:1.8rem;
+                    color:$grey-blue;
+                }
+                .hot-topics {
+                    margin:0;
+                    display:flex;
+                    flex-wrap:wrap;
+                    gap:$s4;
+                    
+                    li {
+                        &:hover {
+                            text-decoration:underline;
+                        }
+                    }
+                }
+            }
+        }        
+    }
+}
+@media only screen and (max-width:540px) {
+    nav { display:none }
+}

@@ -1,0 +1,110 @@
+@use '../abstracts' as *;
+
+footer {
+    background-color:$black-1;
+    color:$grey-2;
+    font-family:$secondary-font;
+    font-weight:300;
+    @include flexWrapper;
+    padding:$s1 0;
+    user-select:none;
+
+    .wrapper {
+        gap:$s4;
+
+        .site-info {
+            flex-grow:1;
+            display:flex;
+            flex-direction:column;
+
+            .site-logo {
+                max-width:13rem;
+                height:4rem;
+                margin-bottom:$s5;
+    
+                img { height:100%; }
+            }
+            .site-description {
+                max-width:40rem;
+                font-size:1.3rem;
+                line-height:1.8;
+                margin:0;
+            }
+        }
+        .site-all-links {
+            text-align:right;
+            display:flex;
+            flex-direction:column;
+            align-items:flex-end;
+            flex-grow:1;
+    
+            .site-links {
+                margin:0;
+                display:flex;
+                gap:$s3;
+                text-transform:uppercase;
+                font-size:1.7rem;
+                font-weight:325;
+                color:$white;
+                margin-bottom:$s6;
+    
+                li + li {
+                    position:relative;
+    
+                    &::before {
+                        content:'·';
+                        color:$red;
+                        font-weight:350;
+                        position:absolute;
+                        left:-2rem;
+                    }
+                }
+            }
+            .copyright {
+                font-size:1.5rem;
+                margin:0 0 $s6 0;
+            }
+            .social-links {
+                display:flex;
+                gap:$s6;
+    
+                li {
+                    background-color:$black-2;
+                    border-radius:50%;
+                    width:5rem;
+                    height:5rem;
+                    text-align:center;
+                    color:$grey-1;
+                    font-size:2.4rem;
+                    transition:background .15s ease-in, color .15s ease-in;
+    
+                    &:hover {
+                        background-color:$grey-1;
+                        color:$black-2;
+                    }
+    
+                    a {
+                        display:block;
+                        line-height:5rem;
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width:830px) {
+            gap:$s3;
+            
+            .site-info, .site-all-links {
+                align-items:center;
+                text-align:center;
+                width:100%;
+            }
+            .site-all-links {
+                .site-links {
+                    flex-wrap:wrap;
+                    justify-content:center;
+                    gap:$s6 $s3;
+                }
+            }
+        }
+    }
+}

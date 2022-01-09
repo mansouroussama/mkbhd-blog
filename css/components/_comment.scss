@@ -1,0 +1,52 @@
+@use '../abstracts/' as *;
+
+.comment {
+    padding:$s3;
+    background-color:$grey-4;
+    border-radius:1rem;
+    max-width:76rem;
+    
+    &:not(:last-child) {
+        margin-bottom:$s3;
+    }
+
+    @media only screen and (max-width:1056px) { // media queries don't work with rem
+        & {
+            max-width:100%;
+        }    
+    }
+
+    .comment-data {
+        display:flex;
+        gap:$s5;
+        margin-bottom:$s6;
+
+        .comment-author-img {
+            height:5rem;
+        }
+        .comment-author {
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            font-family:$secondary-font;
+            font-weight:300;
+            text-transform:uppercase;
+            
+            .comment-author-name {
+                margin-bottom:$s9;
+                color:$red;
+                font-size:1.8rem;
+                font-weight:350;
+            }
+            .comment-publishing-date {
+                color:$grey-2;
+            }
+        }
+    }
+    .comment-content {
+        margin:0;
+        font-size:1.8rem;
+        line-height:1.5;
+        color:$grey-1;
+    }
+}

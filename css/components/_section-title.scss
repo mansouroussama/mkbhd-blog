@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.section-title {
+    font-size:2.6rem;
+    text-transform:uppercase;
+    font-weight:900;
+    position:relative;
+    margin-bottom:$s3;
+    
+    &::after {
+        content:"";
+        width:8rem;
+        height:.5rem;
+        background-color: $red;
+        position:absolute;
+        bottom:-1rem;
+        left:0;
+    }
+}

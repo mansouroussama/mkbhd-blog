@@ -1,0 +1,79 @@
+@use '../abstracts' as *;
+
+.review { 
+    display:flex;
+    flex-direction:column;
+
+    &[article] {
+        @include articleDot;
+    }
+
+    &:not(.multiple-review,.multiple-article,:last-child) {
+        margin-bottom:$s2;
+    }
+
+    .review-img {
+        flex-grow:1;
+        overflow:hidden;
+        position:relative;
+        //box-shadow:inset 0 0 0 50vw  ;
+
+        .img {
+            height:100%;
+            background-size:cover; // cover doesn't work with 110%, not same values
+            background-repeat:no-repeat;
+            background-position:center;
+            transition:transform .15s ease-in;
+        }
+        
+        &::after {
+            content:'';
+            display:block;
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color:rgba($black-1,.1);
+            transition:opacity .15s ease-in;
+        }
+
+        &:hover {
+            .img {
+                transform:scale(1.1)
+            }
+
+            &::after {
+                opacity:0;
+            }
+        }
+    }
+    .review-info {
+        background-color:$black-1;
+        color:$white;
+        
+        .review-title {
+            font-weight:900;
+        }
+        .review-description {
+            font-family:$secondary-font;
+            color:$grey-2;
+            font-weight:325;
+            font-size:1.6rem;
+            font-style:italic;
+            margin:$s7 0;
+        }
+        .review-writer-date {
+            margin:0;
+            font-family:$secondary-font;
+            font-size:1.5rem;
+            font-weight:275;
+            text-transform:uppercase;
+            
+            a {
+                color:$red;
+                font-weight:350;
+            }
+        }    
+    }
+}

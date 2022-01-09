@@ -1,0 +1,157 @@
+@use '../abstracts' as *;
+
+body {
+    header {
+        height:100vh;
+        background-color:$black-1;
+        color:$white;
+        font-family:$secondary-font;
+        font-weight:275;
+        @include flexWrapper; 
+    
+        .wrapper {
+            max-width:100%; 
+            padding:0;
+            height:100%;
+    
+            .article-photo {
+                width:50%;
+                height:100%;
+                background-image:url(../img/article/article-header.png);
+                background-size:cover;
+                background-position:center;
+                position:relative;
+                
+                .article-photo-overlay {
+                    width:100%;
+                    height:50%;
+                    background:linear-gradient(rgba($black-1,1),rgba($black-1,0))
+                }
+    
+                .article-logo {
+                    height:4rem;
+                    position:absolute;
+                    top:5%;
+                    left:5%;
+    
+                    img { height:100%; }
+                }
+            }
+            .article-info {
+                width:50%;
+                padding:$s1;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+    
+                .article-tags {
+                    display:flex;
+                    margin-bottom:$s5;
+                    gap:$s6;
+    
+                    li {
+                        padding:$s9 $s7;
+                        color:$grey-2;
+                        background-color:$black-2;
+                        text-transform:uppercase;
+                        font-weight:300;
+                        border-radius:.3rem;
+                    }
+                }
+                .article-heading {
+                    margin:0 0 $s5 0;
+                    font-family:$primary-font;
+                    font-size:4.6rem;
+                    font-weight:900;
+                    line-height:1.2
+                }
+                .article-description {
+                    color:$grey-2;
+                    font-size:1.8rem;
+                    font-style:italic;
+                    margin:0 0 $s5 0;
+                }
+                .article-writer-date {
+                    text-transform:uppercase;
+                    color:$grey-2;
+    
+                    span { color:$red }
+                }
+            }
+        }
+    }
+    main {
+        section {
+            &.article-content {
+                margin-bottom:0;
+                padding:$s1 0;
+    
+                .wrapper { max-width:80rem }
+                
+                p {
+                    font-size:1.9rem;
+                    line-height:2;
+                    margin:0;
+    
+                    &:not(:last-child) {
+                        margin:0 0 $s6 0;
+                    }
+                }
+            }
+            &.similar-articles {
+                background-color:$black-1;
+                color:$white;
+                display:flex;
+                flex-wrap:wrap;
+    
+                .similar-article {
+                    width:calc(calc(100rem - 100%) * 999);
+                    flex-grow:1;
+                    padding:$s1 $s2;
+    
+                    &:hover {
+                        background-color:$black-2;
+                    }
+    
+                    .similar-article-category {
+                        display:block;
+                        font-family:$secondary-font;
+                        color:$grey-2;
+                        font-weight:300;
+                        text-transform:uppercase;
+                        font-size:1.8rem;
+                        margin-bottom:$s6;
+                    }
+                    .similar-article-title {
+                        font-size:2.8rem;
+                        line-height:1.2;
+                    }
+                }
+            }
+            &.comments { 
+                padding:$s1 0;
+            }
+        }
+    }
+}
+@media only screen and (max-width:1000px) {
+    body header {
+        height:auto;
+        
+        .wrapper {
+            flex-direction:column;
+
+            .article-photo, .article-info { width:100% }
+            .article-photo {
+                height:80vh;
+                
+                .article-photo-overlay {
+                    width:100%;
+                    height:100%;
+                    background:linear-gradient(rgba($black-1,1),rgba($black-1,.3),rgba($black-1,0))
+                }
+            }
+            .article-info { padding:$s2 }
+        }
+    }
+}

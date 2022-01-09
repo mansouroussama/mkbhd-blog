@@ -1,0 +1,131 @@
+@use '../abstracts' as *;
+
+html {
+    body {
+        header {
+
+            @include flexWrapper;
+            font-family:$secondary-font;
+            font-weight:325;
+            min-height:7rem;
+            background-color:$black-1;
+            color:$white;
+            position:sticky;
+            top:0;
+            z-index:100;
+            user-select:none;
+        
+            .wrapper {
+                //justify-content: space-between;
+                padding:0 $s5;
+        
+                @media only screen and (max-width:1070px) { 
+                    
+                    //flex-direction:column;
+                    //align-items:stretch;
+                    //& > * {
+                        //    justify-content:center;
+                        //}
+                        
+                        //.search { max-width:40rem; }
+                        
+                    padding:$s5;
+                    gap:$s4 0;
+                    justify-content:center;
+    
+                    .logo {
+                        order:1;
+                        //margin-right:0!important;
+                    }
+                    .topics {
+                        order:3;
+                        margin:0 auto!important;
+                    }
+                    .right-nav {
+                        order:2;
+                        margin-left:0!important;
+                        margin-right:$s3;
+                    }
+
+                }
+        
+                .logo {
+                    height:4rem;
+                    display:flex;
+                    margin-right:$s3;
+
+                    img { height:100% }
+                }
+                .topics {
+                    display:flex;
+                    flex-wrap:wrap;
+                    gap:2.5rem;
+                    font-size:1.6rem;
+                    justify-content:center;
+        
+                    li {
+                        position:relative;
+                        user-select:none;
+                        
+                        a { padding:1.5rem 0 }
+        
+                        &::before {
+                            content:'';
+                            display:block;
+                            width:100%;
+                            height:.3rem;
+                            background-color:transparent;
+                            border-radius:.2rem;
+                            position:absolute;
+                            bottom:-1rem;
+                            left:0;
+                            transition:background .1s ease-in;
+                            cursor:pointer;
+                        }
+        
+                        &.active, &:hover {
+                            &::before {
+                                background-color:$grey-1;
+                            }
+                        }
+                    }
+                }
+                .right-nav {
+                    display:flex;
+                    gap:1rem;
+                    color:$grey-1;
+                    margin-left:auto;
+        
+                    .search, .user {
+                        line-height:4rem;
+                        background-color:$black-2;
+                        border-radius:2.3rem;
+                        text-align:center;
+                    }
+                    .search {
+                        height:4.6rem;
+                        display:flex;
+                        align-items:center;
+                        gap:1rem;
+                        padding:0 2rem;
+                        font-size:1.5rem;
+                        flex-grow:1;
+        
+                        input {
+                            height:100%;
+                            font-weight:325;
+                            width:10rem;
+                            line-height:1;
+                            color:$white;
+                        }
+                    }
+                    .user {
+                        width:4.6rem;
+                        line-height:4.6rem;
+                        padding:0;
+                    }
+                }
+            }
+        }        
+    }
+}

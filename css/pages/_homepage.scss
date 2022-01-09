@@ -1,0 +1,348 @@
+@use '../abstracts' as *;
+
+main {   
+    padding-top:$s3;
+
+    section {
+        margin-bottom:$s2;
+
+        &.latest-reviews {
+            .latest-reviews-top {
+                display:flex;
+                align-items: center;
+                margin-bottom:$s5;
+
+                h2 { margin-bottom:0 }
+
+                .deals {
+                    background-color:$green-2;
+                    border-radius:.8rem;
+                    color:$green-1;
+                    font-size:1.6rem;
+                    text-transform:capitalize;
+                    padding:$s6 $s5;
+                    margin-left:auto;
+                    align-self:center;
+                    font-family:$secondary-font;
+                }
+            }
+            .latest-reviews-container {
+                min-height:58rem;
+                background-color:$grey-4;
+                display:grid;
+                grid-template-columns:repeat(auto-fit, minmax(380px,auto));
+                grid-template-rows:repeat(auto-fit, minmax(260px,auto));
+                //grid-template-areas:"main-review review1"
+                //                     "main-review review2";
+                border-radius:.8rem;
+                overflow:hidden;
+
+                .review { margin-bottom:0 }
+
+                .main-review {
+                    grid-column:span 2;
+                    grid-row:span 2;
+
+                    .review-img .img {
+                        background-image:url(../img/latest-reviews/main-review.png);
+                    }
+                    .review-info {
+                        padding:$s5 $s3;
+
+                        .review-title {
+                            font-size:2.8rem;
+                            margin-bottom:$s7;
+                        }
+                    }
+                }
+                .review1 {
+                    grid-column:span 1;
+                    grid-row:span 1;
+                    background-color:$grey-1;
+
+                    .review-info {
+                        padding:$s5 $s4;
+                        .review-title {
+                            font-size:1.8rem;
+                            margin-bottom:$s7;
+                        }
+                        .review-writer-date { font-size:1.3rem }
+                    }
+                    .review-img .img {
+                        background-image:url(../img/latest-reviews/review1.png);
+                    }
+                }
+                .review2 {
+                    grid-column:span 1;
+                    grid-row:span 1;
+                    background-color:$grey-2;
+
+                    .review-info {
+                        padding:$s5 $s4;
+
+                        .review-title {
+                            font-size:1.8rem;
+                            margin-bottom:$s7;
+                        }
+                        .review-writer-date { font-size:1.3rem }
+                    }
+                    .review-img .img {
+                        background-image:url(../img/latest-reviews/review2.png);
+                    }
+                }
+             }
+        }
+        &.news {
+            .news-container {
+                display:flex;
+                gap:8rem;
+                flex-wrap:wrap;
+                
+                &.bottom-news {
+                    .reviews {
+                        max-width:76rem;
+                    }
+                }
+                
+                .reviews {
+                    flex-grow:99999;
+                    width:60%;
+                    margin-bottom:$s2;
+
+                    .main-review {
+                        border-radius:.8rem;
+                        //box-shadow:.8rem .8rem 0 0 $grey-2;
+                        //outline:.5rem dashed $grey-blue;
+                        overflow:hidden;
+
+                        .review-img {
+                            height:40rem;
+                            width:100%;;
+                        }
+                        .review-img .img {
+                            background-image:url(../img/news/main-review.png);
+                        }
+                        .review-info {
+                            padding:$s4 $s3;
+                            @include articleDot;
+                            
+                            .review-title {
+                                font-size:2.6rem;
+                                margin-bottom:$s7;
+                            }
+                        }
+                    }
+                    .normal-review {
+                        flex-direction:row;
+                        gap:$s3;
+
+                        .review-img {
+                            height:18rem;
+                            width:28rem;
+                            flex-shrink:0;
+                            border-radius:.3rem;
+
+                            .img {
+
+                                &.img1 { background-image:url(../img/news/1.png) }
+                                &.img2 { background-image:url(../img/news/2.png) }
+                                &.img3 { background-image:url(../img/news/3.png) }
+                            }
+                        }
+                        .review-info {
+                            background-color:transparent;
+                            color:$grey-2;
+                            display:flex;
+                            flex-direction:column;
+                            justify-content:center;
+                            flex-grow:0;
+
+                            .review-title {
+                                color:$black-1;
+                                font-size:2.6rem;
+                            }
+                            .review-description {
+                                margin:1rem 0;
+                            }
+                        }
+                    }
+                    
+                }
+                .side-reviews {
+                    width:32rem;
+                    flex-grow:1;
+                    position:relative;
+
+                    .side-review {
+                        display:flex;
+                        flex-direction:column;
+                        border-radius:.8rem;
+                        overflow:hidden;
+
+                        .review-img {
+                            height:20rem;
+                            aspect-ratio:16/9;
+                            flex-shrink:0;
+
+                            .img {
+                                &.img4 { background-image:url(../img/news/4.png) }
+                                &.img5 { background-image:url(../img/news/5.png) }
+                                &.img6 { background-image:url(../img/news/6.png) }
+                            }
+                        } 
+                        .review-info {
+                            padding:$s6 $s6;
+                            
+                            .review-title {
+                                font-size:1.6rem;
+                                line-height:1.5;
+                                margin-bottom:$s8;
+                            }
+                            .review-writer-date {
+                                font-size:1.4rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .wide-review {
+                background-color:$grey-4;
+                border-radius:.8rem;
+                height:20rem;
+                display:flex;
+                flex-direction:row;
+                gap:4rem;
+                padding:0 10rem;    
+                
+                .review-info {
+                    background-color:transparent;
+                    color:$grey-2;
+                    width:50%;
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:center;
+
+                    &.left-side { text-align:right }
+                    &.right-side { text-align:left }
+
+                    .review-title {
+                        font-size:2.8rem;
+                        color:$black-1;
+                        margin-bottom:$s7;
+                    }
+                    .review-description {
+                        margin:0;
+                    }
+                    
+                }
+            }
+            .multiple-reviews {
+                color:$white;
+                display:flex;
+                gap:$s2;
+                margin-bottom:$s2;
+                flex-wrap:wrap;
+
+                .multiple-review {
+                    width:calc(calc(90rem - 100%)*999);
+                    flex-grow:1;
+                    border-radius:.8rem;
+                    overflow:hidden;
+
+                    .review-info {
+                        padding:$s5;
+                        display:flex;
+                        flex-direction:column;
+
+                        .review-title {
+                            font-size:1.8rem;
+                            margin-bottom:$s7;
+                        }
+                        .review-description {
+                            font-size:1.4rem;
+                            margin:0 0 $s7 0;
+                        }
+                        .review-writer-date {
+                            font-size:1.3rem;
+                        }
+                    }
+                    .review-img {
+                        height:20rem;
+                        
+                        .img1 { background-image:url(../img/latest-reviews/main-review.png) }
+                        .img2 { background-image:url(../img/latest-reviews/review1.png) }
+                        .img3 { background-image:url(../img/latest-reviews/review2.png) }
+                    }
+                }
+            }
+        } 
+    }
+}
+
+@media only screen and (max-width:1056px) { // media queries don't work with rem
+    main section.news .news-container.bottom-news .reviews {
+        max-width:100%;
+    }
+    main section.news .multiple-reviews .multiple-review {
+        flex-direction:row;
+        width:100%;
+
+        .review-info {
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            max-width:25rem;
+            padding:$s3;
+
+            .review-title {
+                font-size:2.4rem;
+                margin-bottom:$s6;
+            }
+            .review-description {
+                margin-bottom:$s6;
+            }
+        }
+        .review-img {
+            height:25rem;
+        }
+    }
+    
+}
+@media only screen and (max-width:1039.5px) {
+    main section.news .news-container .side-reviews .side-review {
+        flex-direction:row-reverse;
+        width:100%;
+    
+        .review-info {
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            max-width:25rem;
+            padding:$s3;
+    
+            .review-title {
+                font-size:2.4rem;
+                line-height:1.3;
+                margin-bottom:$s7;
+            }
+        }
+        .review-img {
+            height:25rem;
+        }
+    }
+}
+@media only screen and (max-width:540px) {
+    main section.news .news-container .reviews .normal-review .review-img {
+        width:22rem;
+    }
+}
+@media only screen and (max-width:801px) {
+    main section.latest-reviews .latest-reviews-container {
+        min-height:100rem;
+        grid-template-columns:1fr;
+
+        .main-review, .review-1, .review-2 {
+            grid-column:1 / -1;
+        }
+    }
+}
