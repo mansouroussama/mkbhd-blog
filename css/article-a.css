@@ -1119,6 +1119,9 @@ html body .wrapper {
   padding: 0 2rem;
   margin: auto;
 }
+html .os-content {
+  height: auto !important;
+}
 html .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
   background-color: #d50014 !important;
   border-radius: 7px;
@@ -1243,7 +1246,7 @@ body main section.similar-articles .similar-article:hover {
 }
 body main section.similar-articles .similar-article .similar-article-category {
   display: block;
-  font-family: "Oper Mono";
+  font-family: "Operator Mono";
   color: #818689;
   font-weight: 300;
   text-transform: uppercase;
@@ -1470,5 +1473,4 @@ footer .wrapper .site-all-links .social-links li a {
     justify-content: center;
     gap: 1.5rem 3rem;
   }
-}
-/*# sourceMappingURL=article-a.css.map */ */
+}/*# sourceMappingURL=article-a.css.map */

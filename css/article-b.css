@@ -1119,6 +1119,9 @@ html body .wrapper {
   padding: 0 2rem;
   margin: auto;
 }
+html .os-content {
+  height: auto !important;
+}
 html .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
   background-color: #d50014 !important;
   border-radius: 7px;
@@ -1141,6 +1144,8 @@ html body header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1178,7 +1183,7 @@ html body header .wrapper {
 html body header .wrapper .logo {
   height: 4rem;
   display: flex;
-  margin-right: 3rem;
+  margin-right: 4rem;
 }
 html body header .wrapper .logo img {
   height: 100%;
