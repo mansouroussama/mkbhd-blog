@@ -29,17 +29,20 @@ $(function() {
 
 // Clicking on scroll button scrolls to top
 var scrollBtn = document.querySelector(".scrollTopBtn");
+var viewport = document.querySelector('.os-viewport');
 
-window.onscroll = function() { scrollFunction() };
-
-function scrollFunction() {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-        scrollBtn.removeAttribute("disabled")
-    } else {
-        scrollBtn.setAttribute("disabled","true")
-    }
+window.onload = () => {
+    document.querySelector('.os-viewport').onscroll = function() {
+        if (document.querySelector('.os-viewport').scrollTop > 400 || document.querySelector('.os-viewport').scrollTop > 400) {
+            scrollBtn.removeAttribute("disabled")
+        } else {
+            scrollBtn.setAttribute("disabled","true")
+        }
+    };
 }
 
+
+
 function scrollToTop() {
-    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+    document.querySelector('.os-viewport').scroll({ top: 0, left: 0, behavior: 'smooth' });
 }
