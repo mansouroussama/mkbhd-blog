@@ -1081,7 +1081,7 @@ THEMES:
 
 @media only screen and (max-width: 768px) {
   html {
-    font-size: 8px;
+    font-size: 8px !important;
   }
   html main section.news .wide-review {
     padding: 0 6rem;
@@ -1913,7 +1913,7 @@ footer .wrapper .site-all-links .site-links li + li::before {
 }
 footer .wrapper .site-all-links .copyright {
   font-size: 1.5rem;
-  margin: 0 1.5rem 0;
+  margin: 0 0 1.5rem 0;
 }
 footer .wrapper .site-all-links .social-links {
   display: flex;
@@ -1951,5 +1951,4 @@ footer .wrapper .site-all-links .social-links li a {
     justify-content: center;
     gap: 1.5rem 3rem;
   }
-}
-/*# sourceMappingURL=main.css.map *//
+}/*# sourceMappingURL=main.css.map */
