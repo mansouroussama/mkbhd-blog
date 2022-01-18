@@ -333,13 +333,13 @@ main {
 }
 @media only screen and (max-width:540px) {
     main section.news .news-container .reviews .normal-review .review-img,
-        main section.news .news-container .reviews .side-review .review-img {
+    main section.news .news-container .side-reviews .side-review .review-img {
         width:22rem;
     }
 }
 @media only screen and (max-width:540px) {
     main section.news .wide-review {
-        padding:0 6rem;
+        padding:2rem 6rem;
     }
 }
 @media only screen and (max-width:801px) {
