@@ -208,7 +208,7 @@ main {
             .wide-review {
                 background-color:$grey-4;
                 border-radius:.8rem;
-                height:20rem;
+                min-height:20rem;
                 display:flex;
                 flex-direction:row;
                 gap:4rem;
@@ -332,7 +332,8 @@ main {
     }
 }
 @media only screen and (max-width:540px) {
-    main section.news .news-container .reviews .normal-review .review-img {
+    main section.news .news-container .reviews .normal-review .review-img,
+        main section.news .news-container .reviews .side-review .review-img {
         width:22rem;
     }
 }
