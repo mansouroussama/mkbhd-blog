@@ -337,6 +337,11 @@ main {
         width:22rem;
     }
 }
+@media only screen and (max-width:540px) {
+    main section.news .wide-review {
+        padding:0 6rem;
+    }
+}
 @media only screen and (max-width:801px) {
     main section.latest-reviews .latest-reviews-container {
         min-height:100rem;
