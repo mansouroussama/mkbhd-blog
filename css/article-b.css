@@ -1082,16 +1082,16 @@ THEMES:
 @media only screen and (max-width: 768px) {
   html {
     font-size: 8px !important;
+    /*.scrollTopBtn {
+        width:4rem;
+        height:4rem;
+        bottom:4rem;
+        right:4rem;
+        line-height:4rem;
+    }*/
   }
   html main section.news .wide-review {
     padding: 0 6rem;
-  }
-  html .scrollTopBtn {
-    width: 4rem;
-    height: 4rem;
-    bottom: 4rem;
-    right: 4rem;
-    line-height: 4rem;
   }
 }
 

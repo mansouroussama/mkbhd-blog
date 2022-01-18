@@ -1082,16 +1082,16 @@ THEMES:
 @media only screen and (max-width: 768px) {
   html {
     font-size: 8px !important;
+    /*.scrollTopBtn {
+        width:4rem;
+        height:4rem;
+        bottom:4rem;
+        right:4rem;
+        line-height:4rem;
+    }*/
   }
   html main section.news .wide-review {
     padding: 0 6rem;
-  }
-  html .scrollTopBtn {
-    width: 4rem;
-    height: 4rem;
-    bottom: 4rem;
-    right: 4rem;
-    line-height: 4rem;
   }
 }
 
@@ -1506,7 +1506,7 @@ main section.news .news-container .side-reviews .side-review .review-info .revie
 main section.news .wide-review {
   background-color: #ebf0f5;
   border-radius: 0.8rem;
-  height: 20rem;
+  min-height: 20rem;
   display: flex;
   flex-direction: row;
   gap: 4rem;
@@ -1625,7 +1625,8 @@ main section.news .multiple-reviews .multiple-review .review-img .img3 {
   }
 }
 @media only screen and (max-width: 540px) {
-  main section.news .news-container .reviews .normal-review .review-img {
+  main section.news .news-container .reviews .normal-review .review-img,
+main section.news .news-container .reviews .side-review .review-img {
     width: 22rem;
   }
 }
